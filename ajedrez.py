@@ -157,6 +157,22 @@ class arbol():
 
         print("Tiempo de ejecución --> ", time.time() - start_time)
 
+        self.ChecarJaqueyJaqueMate()
+
+
+    def ChecarJaqueyJaqueMate(self):
+        if board.is_check():
+            print('Jaque')
+        else:
+            pass
+
+        if board.is_checkmate():
+            print('Jaque Mate')
+            board.is_game_over()
+        else:
+            pass
+
+
 n = arbol("raiz",None,None,None)
 
 print("Examen - Ajedrez")
@@ -169,6 +185,8 @@ while(True):
 
     tiro = input("\nDonde tirar ?:")
     n.funcionTiro(tiro)
+
+    n.ChecarJaqueyJaqueMate()
 
     n.funcionTipoDeFichas(n)
     n.funcionMovimientosPosibles()
